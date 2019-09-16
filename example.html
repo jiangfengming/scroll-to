@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>scroll to element</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+    body {
+      height: 9999px;
+      background-image: linear-gradient(to bottom, rgba(255,255,0,0.5), rgba(0,0,255,0.5));
+    }
+
+    .fixed {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+    }
+
+    .box {
+      margin-top: 2000px;
+      width: 200px;
+      height: 200px;
+      background: #FF2F92;
+    }
+    </style>
+  </head>
+
+  <body>
+    <div class="fixed">
+      <button id="gotoTop">go to top</button>
+      <button id="gotoBottom">go to bottom</button>
+      <button id="scrollToBox">scroll to box</button>
+    </div>
+
+    <div class="box"></div>
+
+    <script type="module">
+    import { scrollToElement, scrollToTop, scrollToBottom } from './dist/index.bundle.js'
+
+    document.getElementById('gotoTop').addEventListener('click', scrollToTop)
+    document.getElementById('gotoBottom').addEventListener('click', scrollToBottom)
+
+    document.getElementById('scrollToBox').addEventListener('click', () =>
+      scrollToElement(document.querySelector('.box'), 100)
+    )
+    </script>
+  </body>
+</html>
