@@ -1,7 +1,7 @@
 # scroll-to
 Scrolls to element smoothly.
 
-[Demo](example.html)
+[Demo](https://jiangfengming.github.io/scroll-to/example.html)
 
 ## Install
 
