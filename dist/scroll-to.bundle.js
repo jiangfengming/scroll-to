@@ -34,19 +34,29 @@ var easeInOut = function easeInOut(p) {
 
 var easeInOutQuad = easeInOut(2); // accelerating from zero velocity
 
-function scrollToElement(el, offset = 0) {
-  const y = window.scrollY;
-  const d = el.getBoundingClientRect().top - offset;
-  createTransition(t => window.scrollTo(0, y + t * d), 300, easeInOutQuad);
+function scrollToElement(el, offset) {
+  if (offset === void 0) {
+    offset = 0;
+  }
+
+  var y = window.scrollY;
+  var d = el.getBoundingClientRect().top - offset;
+  createTransition(function (t) {
+    return window.scrollTo(0, y + t * d);
+  }, 300, easeInOutQuad);
 }
 function scrollToTop() {
-  const y = window.scrollY;
-  createTransition(t => window.scrollTo(0, y - t * y), 300, easeInOutQuad);
+  var y = window.scrollY;
+  createTransition(function (t) {
+    return window.scrollTo(0, y - t * y);
+  }, 300, easeInOutQuad);
 }
 function scrollToBottom() {
-  const y = window.scrollY;
-  const d = document.documentElement.scrollHeight - window.innerHeight - window.scrollY;
-  createTransition(t => window.scrollTo(0, y + t * d), 300, easeInOutQuad);
+  var y = window.scrollY;
+  var d = document.documentElement.scrollHeight - window.innerHeight - window.scrollY;
+  createTransition(function (t) {
+    return window.scrollTo(0, y + t * d);
+  }, 300, easeInOutQuad);
 }
 
 export { scrollToBottom, scrollToElement, scrollToTop };

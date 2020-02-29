@@ -2,9 +2,9 @@
   "name": "@jfm/scroll-to",
   "version": "0.1.1",
   "description": "Scrolls to element smoothly",
-  "main": "dist/index.js",
+  "main": "dist/scroll-to.js",
   "scripts": {
-    "build": "rollup -c rollup.config.esm.js && rollup -c rollup.config.esm.bundle.js",
+    "build": "rollup -c && rollup -c rollup.config.bundle.js",
     "example": "serve"
   },
   "repository": {
@@ -21,16 +21,33 @@
   },
   "homepage": "https://github.com/jiangfengming/scroll-to#readme",
   "dependencies": {
-    "create-transition": "^0.2.0"
+    "create-transition": "^0.3.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.0",
-    "@babel/preset-env": "^7.6.0",
-    "eslint": "^6.4.0",
+    "@babel/core": "^7.8.6",
+    "@babel/preset-env": "^7.8.6",
+    "eslint": "^6.8.0",
     "eslint-config-enough": "^0.3.8",
-    "rollup": "^1.21.3",
+    "rollup": "^1.32.0",
     "rollup-plugin-babel": "^4.3.3",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "serve": "^11.1.0"
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "serve": "^11.3.0"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "loose": true,
+          "modules": false
+        }
+      ]
+    ]
+  },
+  "eslintConfig": {
+    "extends": "enough",
+    "env": {
+      "browser": true
+    }
   }
 }

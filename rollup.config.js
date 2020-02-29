@@ -5,7 +5,7 @@ export default {
 
   output: {
     format: 'esm',
-    file: 'dist/index.js'
+    file: 'dist/scroll-to.js'
   },
 
   plugins: [
