@@ -1,6 +1,6 @@
 {
   "name": "@jfm/scroll-to",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Scrolls to element smoothly",
   "main": "dist/scroll-to.js",
   "scripts": {
